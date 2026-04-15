@@ -49,11 +49,11 @@
 //   var pdf;
 //   var validaIndice = indice >= 0 && indice <= 19;
 //   if (setter === "acomp" && validaIndice) {
-//     pdf = "./assets/pdf/" + indice + "acomp.pdf";
+//     pdf = "/assets//pdf/" + indice + "acomp.pdf";
 //   } else if (setter === "analise" && validaIndice) {
-//     pdf = "./assets/pdf/" + indice + "analise.pdf";
+//     pdf = "/assets//pdf/" + indice + "analise.pdf";
 //   } else if (setter === "impressao" && validaIndice) {
-//     pdf = "./assets/pdf/" + indice + "impressao.pdf";
+//     pdf = "/assets//pdf/" + indice + "impressao.pdf";
 //   }
 //   console.log(pdf);
 //   window.open(pdf);
@@ -91,7 +91,7 @@
 
 //   //Troca de imagem
 //   var img1 = new Image();
-//   img1.src = "./assets/img/Desafios/" + indice + ".svg";
+//   img1.src = "/assets//img/Desafios/" + indice + ".svg";
 
 //   // display "iniciar desafio" button with there is a interactive implementation for that challenge
 //   if (arquivosHtml[indice] != "" && arquivosHtml[indice] != null) {
@@ -279,11 +279,11 @@ function AbrirPDF(setter) {
   var pdf;
   var validaIndice = indice >= 0 && indice <= 19;
   if (setter === "acomp" && validaIndice) {
-    pdf = "./assets/pdf/" + indice + "acomp.pdf";
+    pdf = "/assets//pdf/" + indice + "acomp.pdf";
   } else if (setter === "analise" && validaIndice) {
-    pdf = "./assets/pdf/" + indice + "analise.pdf";
+    pdf = "/assets//pdf/" + indice + "analise.pdf";
   } else if (setter === "impressao" && validaIndice) {
-    pdf = "./assets/pdf/" + indice + "impressao.pdf";
+    pdf = "/assets//pdf/" + indice + "impressao.pdf";
   }
   console.log(pdf);
   window.open(pdf);
@@ -323,7 +323,7 @@ function AbrirPDF(setter) {
 
 //   //Troca de imagem
 //   var img1 = new Image();
-//   img1.src = "./assets/img/Desafios/" + indice + ".svg";
+//   img1.src = "/assets//img/Desafios/" + indice + ".svg";
 
 //   // display "iniciar desafio" button with there is a interactive implementation for that challenge
 //   if (arquivosHtml[indice] != "") {
@@ -387,7 +387,7 @@ function AntesProximo(titles, type) {
 
   //Troca de imagem
   var img1 = new Image();
-  img1.src = "./assets/img/Desafios/" + indice + ".svg";
+  img1.src = "/assets//img/Desafios/" + indice + ".svg";
 
   // display "iniciar desafio" button with there is a interactive implementation for that challenge
   if (arquivosHtml[indice] != "" && arquivosHtml[indice] != null) {

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="/css/styles.css" rel="stylesheet" />
+    <!-- <link href="/css/little_styles.css" rel="stylesheet" /> -->
+
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
+    />
+
+    <style>
+      .BotaoInstrucoes {
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-bottom: 20px;
+        width: 90%;
+        font-weight: bold;
+        font-size: 15px;
+        color: #1c203f;
+        background-color: #fbdac3;
+      }
+
+      .resposta {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 10px;
+        width: 90%;
+        border: #fbdac3 solid 3px;
+        border-radius: 10px;
+      }
+
+      body {
+        display: flex;
+        gap: 30px;
+        margin: 30px;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      .red {
+        color: #f10303;
+        font-size: 5px;
+      }
+
+      .mic__display {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .mic__display label {
+        font-size: 1.1rem;
+        position: relative;
+        bottom: 0.2rem;
+        right: 15px;
+      }
+
+      .mic__display span {
+        color: #f10303;
+        font-size: 0.81rem;
+        top: 0.2rem;
+        position: relative;
+      }
+
+      .mic__display h6 {
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin-left: 135px;
+        position: relative;
+        bottom: 2px;
+      }
+
+      .btn button {
+        border: none;
+        background: transparent;
+        color: darkslategray;
+      }
+
+      .mic__container {
+        border: #1c203f solid 1px;
+        padding: 20px 15px 0px 15px;
+        border-radius: 15px;
+        box-shadow: 2px 2px 2px 2px #1c203f;
+        background-color: #fbdac3;
+        color: #1c203f;
+        width: 370px;
+        height: 100px;
+
+        display: none;
+      }
+
+      .mic__buttons {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .mic {
+        margin-top: 20px;
+      }
+
+      .microphone__small {
+        margin-top: 20px;
+      }
+
+      .microphone__small button {
+        background-color: #fbdac3;
+        font-weight: bold;
+        font-size: 15px;
+        color: #d90303;
+        border: #d90303 solid 1px;
+        padding: 1px 14px 7px 10px;
+        border-radius: 15px;
+        box-shadow: 1px 1px 1px 1px #d90303;
+      }
+
+      .microphone__small .material-symbols-outlined {
+        position: relative;
+        top: 5px;
+        padding: 2px;
+      }
+
+      .mic button {
+        background-color: #fbdac3;
+        font-weight: bold;
+        font-size: 15px;
+        color: #1c203f;
+        border: #1c203f solid 1px;
+        padding: 1px 4px 5px 10px;
+        border-radius: 15px;
+        box-shadow: 1px 1px 1px 1px #1c203f;
+      }
+
+      .mic button:hover {
+        color: #fff;
+        border-color: #fff;
+        background-color: #383838;
+      }
+
+      .mic .material-symbols-outlined {
+        position: relative;
+        top: 0.5rem;
+      }
+
+      .player__line {
+        border-top: #1c203f solid 2px;
+      }
+
+      .player__circle {
+        height: 13px;
+        width: 13px;
+        background-color: #1c203f;
+        border-radius: 50%;
+        position: relative;
+        bottom: 8px;
+        left: 0%; /* this is the atribute! */
+      }
+
+      .audio__player {
+        display: flex;
+        /* width: 100%; */
+        justify-content: start;
+        display: none;
+      }
+
+      .audio__player h6 {
+        margin-left: 34px;
+        margin-right: 7px;
+        position: relative;
+        top: 2px;
+      }
+
+      .audio__player button {
+        padding: 0 0 0 10px;
+      }
+
+      .player__container {
+        width: 80%;
+        position: relative;
+        top: 12px;
+        left: 10px;
+      }
+
+      .btn:focus,
+      .btn:active {
+        box-shadow: 0 0 0 0;
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id="microphone" class="mic">
+        <button id="start__rec">
+          <span> Gravar áudio </span>
+          <span class="material-symbols-outlined"> mic </span>
+        </button>
+      </div>
+
+      <div class="mic__container">
+        <audio id="recorder" muted hidden></audio>
+        <!-- player  -->
+        <div class="audio__player">
+          <button class="btn">
+            <span id="play__audio" class="material-symbols-outlined">
+              play_arrow
+            </span>
+            <span
+              id="stop__audio"
+              style="display: none"
+              class="material-symbols-outlined"
+            >
+              pause_circle
+            </span>
+          </button>
+          <button id="stop__player" style="display: none" class="btn">
+            <span class="material-symbols-outlined"> pause_circle </span>
+          </button>
+          <div class="player__container">
+            <div class="player__line"></div>
+            <div class="player__circle"></div>
+          </div>
+          <h6 id="timer__play">00:00</h6>
+        </div>
+        <!-- player  -->
+        <div class="mic__display">
+          <span class="material-symbols-outlined red">
+            radio_button_unchecked
+          </span>
+          <label>Gravando</label>
+          <h6 id="timer__rec">00:00</h6>
+        </div>
+
+        <div class="mic__buttons">
+          <button class="btn" id="delete">
+            <span class="material-symbols-outlined"> delete </span>
+          </button>
+          <button class="btn" id="stop__rec">
+            <span class="material-symbols-outlined"> pause_circle </span>
+          </button>
+          <button class="btn" id="send">
+            <span class="material-symbols-outlined"> send </span>
+          </button>
+        </div>
+      </div>
+
+      <div id="microphone__s" class="mic">
+        <button id="start__rec__s">
+          <span> Gravar áudio </span>
+          <span class="material-symbols-outlined"> mic </span>
+        </button>
+      </div>
+
+      <div class="microphone__small" style="display: none">
+        <button id="start__rec">
+          <span class="material-symbols-outlined"> mic </span>
+          <span> Gravando ... </span>
+        </button>
+      </div>
+
+      <div class="microphone__small" style="display: none">
+        <button id="start__rec" style="padding-right: 23px">
+          <span
+            class="material-symbols-outlined"
+            style="
+              font-size: 12px;
+              position: relative;
+              top: 1px;
+              padding-top: 10px;
+            "
+          >
+            radio_button_unchecked
+          </span>
+          <span style="color: #1c203f"> REC </span>
+        </button>
+      </div>
+    </div>
+
+    <!--  -->
+    <div class="Instrucoes col-lg-2 col-md-8 col-sm-12 text-center mt-4">
+      <section class="text-light pt-3" style="background-color: #1c203f">
+        <!-- <p style="color: rgb(53, 53, 53); font-size: 26px">
+            <strong class="gotham">Instruções</strong>
+          </p> -->
+        <button
+          class="BotaoInstrucoes btn btn-primary gotham"
+          data-toggle="tooltip"
+          data-placement="right"
+          title="Imprimir pdf do desafio"
+          onclick="AbrirPDF('impressao')"
+        >
+          Desafio PDF
+        </button>
+        <button
+          class="BotaoInstrucoes btn btn-primary gotham"
+          data-toggle="tooltip"
+          data-placement="right"
+          title="Análise do problema"
+          onclick="AbrirPDF('analise')"
+        >
+          Análise
+        </button>
+        <button
+          class="BotaoInstrucoes btn btn-primary gotham"
+          data-toggle="tooltip"
+          data-placement="right"
+          title="Acompanhe a criança em casa"
+          onclick="AbrirPDF('acomp')"
+        >
+          Descobridores em Casa
+        </button>
+        <div class="resposta text-center container mt-3">
+          <h2 class="mb-3 mt-2" style="font-size: 1.5rem">Resposta</h2>
+          <form
+            name="sentMessage"
+            action="https://formspree.io/f/mleoaqyb"
+            method="POST"
+          >
+            <div class="form-group">
+              <input
+                class="form-control"
+                id="email"
+                type="email"
+                name="E-mail"
+                placeholder="E-mail"
+                required="required"
+                data-validation-required-message="Por Favor, insira seu E-mail."
+              />
+              <p class="help-block text-danger"></p>
+            </div>
+            <div class="form-group form-group-textarea mb-md-0">
+              <textarea
+                class="form-control"
+                id="message"
+                name="Mensagem"
+                placeholder="Resposta"
+                required="required"
+                style="height: 200px"
+                data-validation-required-message="Por Favor, insira sua resposta."
+              ></textarea>
+              <p class="help-block text-danger"></p>
+            </div>
+            <label class="BotaoInstrucoes">
+              Upload <input type="file" hidden />
+            </label>
+            <div class="text-center">
+              <div id="success"></div>
+              <button
+                class="mb-3 BotaoInstrucoes"
+                id="sendMessageButton"
+                type="submit"
+                value="Send"
+                data-target="_blank"
+              >
+                Enviar Mensagem
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <script src="../js/microphoneController.js"></script>
+  </body>
+</html>

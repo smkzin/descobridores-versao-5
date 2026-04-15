@@ -73,11 +73,11 @@ const setActiveGame = (gameId) => {
 
   currentChat.querySelector(
     "img"
-  ).src = `./assets/img/Desafios-img/${gameId}.png`;
+  ).src = `/assets//img/Desafios-img/${gameId}.png`;
 
   document.querySelector(
     ".messages"
-  ).style.backgroundImage = `url("./assets/img/Desafios-img/${gameId}.png")`;
+  ).style.backgroundImage = `url("/assets//img/Desafios-img/${gameId}.png")`;
 
   currentChat.querySelector("h5").innerHTML =
     activeGameEl.lastElementChild.innerHTML;
@@ -93,7 +93,7 @@ const createMessageHTML = (name, dateStr, avatarID, message) => {
 
   return `
     <div class="message__div">
-      <img src="./assets/img/chat/avatar${avatarID}.jpg" alt="" />
+      <img src="/assets//img/chat/avatar${avatarID}.jpg" alt="" />
       <p>
         ${message}
       </p>
@@ -215,7 +215,7 @@ const displayGames = (data) => {
     if (index > colors.length - 1) index = 0;
 
     div.innerHTML = `
-      <img src="./assets/img/Desafios-img/chat-${el.id - 1}.png" />
+      <img src="/assets//img/Desafios-img/chat-${el.id - 1}.png" />
       <label>${el.game_name}</label>
     `;
 

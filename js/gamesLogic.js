@@ -7,7 +7,7 @@ const showRulesModel = (index) => {
 
     document
       .getElementById("img01")
-      .setAttribute("src", `./assets/img/Desafios/${index}.svg`);
+      .setAttribute("src", `/assets//img/Desafios/${index}.svg`);
 
     // When the user clicks on <span> (x), close the modal
     const span = document.getElementById("fechar");
@@ -190,7 +190,7 @@ const addConfettiEffect = () => {
 const showSucessCard = (gameDivs) => {
   addConfettiEffect();
 
-  const sound = new Audio("./assets/sounds/correct_4.wav");
+  const sound = new Audio("/assets//sounds/correct_4.wav");
   sound.play();
 
   const containers = gameDivs.map((className) => {

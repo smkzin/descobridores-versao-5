@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Viver é aprender" />
+    <meta name="author" content="WebDevelopers" />
+    <title>Os Descobridores da Matemática</title>
+    <link rel="icon" type="image/x-icon" href="/assets//img/Logos/Logo.jpg" />
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v5.13.0../js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link href="/css/little_styles.css" rel="stylesheet" />
+    <link href="/css/conffeti.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allura&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .game__container {
+        display: flex;
+        justify-content: space-around;
+        min-height: 90vh;
+        margin: 2rem 0rem;
+
+        align-items: start;
+      }
+
+      .circles__container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+      }
+
+      .circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* width: 7.5rem; */
+        /* height: 7.5rem; */
+        background-color: white;
+        border: solid 2px #030d48;
+        border-radius: 50%;
+        position: absolute;
+        /* transform-origin: center center; */
+
+        width: 8.5vw;
+        height: 8.5vw;
+      }
+
+      .big__circle {
+        border: solid 2px #030d48;
+        border-radius: 50%;
+
+        position: relative;
+        width: 35vw;
+        height: 35vw;
+      }
+
+      .element {
+        width: 4rem;
+        height: 6.53rem;
+        z-index: 1;
+      }
+
+      .monsters__container {
+        display: flex;
+      }
+
+      .monsters__container div {
+        display: flex;
+        flex-direction: column;
+        margin-right: 2rem;
+        min-width: 4rem;
+      }
+
+      .wrong__btn,
+      .correct__btn {
+        left: 5rem;
+        width: 20rem;
+      }
+
+      @media (max-width: 1024px) {
+        .element {
+          width: 2rem;
+          height: 3.53rem;
+        }
+      }
+    </style>
+  </head>
+  <body id="page-top">
+    <div
+      id="PopUp"
+      class="modal"
+      tabindex="-1"
+      role="dialog"
+      style="display: none"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              Bem Vindo aos Descobridores da Matemática
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Fechar"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p style="color: black">
+              Olá! Seja bem-vindo ao site
+              <b>DESCOBRIDORES DA MATEMÁTICA</b>.<br />
+              Aqui você encontrará divertidos desafios e problemas.<br />
+              Vamos lá?
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+              onclick="document.getElementById('PopUp').remove()"
+            >
+              Vamos lá
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <main>
+        <!-- Masthead-->
+        <div style="background-color: #1b2038" class="hall text-light pt-0">
+          <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-6">
+              <!-- IMAGEM DA LOGO -->
+              <img
+                id="logo"
+                class="img-fluid"
+                src="/assets//img/Logos/descobridores.svg"
+                style="
+                  max-height: 300px;
+                  max-width: 300px;
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  margin: auto;
+                "
+              />
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 my-auto">
+              <h1 class="text-uppercase TitleText">
+                <a href="./index.html" class="LinkTitulo">
+                  <div>Descobridores&nbsp</div>
+                  <div>Da Matemática</div>
+                </a>
+              </h1>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12">
+              <img
+                id=""
+                class="float-right img-flex"
+                src="/assets//img/capa.jpg"
+                style="height: 300px; width: 500px"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <div class="container" id="mainNav">
+            <button
+              class="navbar-toggler navbar-toggler-right"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarResponsive"
+              aria-controls="navbarResponsive"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              Menu
+              <i class="fas fa-bars ml-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul
+                id="menu"
+                class="navbar-nav text-uppercase ml-auto"
+                style="margin-right: auto !important"
+              >
+                <li class="parent nav-item dropdown">
+                  <a class="nav-link" href="javascript:"
+                    ><b class="BotaoNavMain">Descobridores</b></a
+                  >
+                  <ul class="child">
+                    <li>
+                      <a href="./Oque.html" class="dropdown-item" href="#"
+                        >O que é</a
+                      >
+                    </li>
+                    <li class="parent">
+                      <a class="dropdown-item" href="javascript:"
+                        >Quem somos<span class="expand">»</span></a
+                      >
+                      <ul class="child">
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="./apresentacao.html"
+                            nowrap
+                            >Apresentação</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="./coordenadores.html"
+                            nowrap
+                            >Coordenador</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="./sub-coordenadores.html"
+                            nowrap
+                            >Sub-coordenadores</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="./orientadores.html"
+                            nowrap
+                            >Orientadores</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="./professores.html"
+                            nowrap
+                            >Professores</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="./monitores.html"
+                            nowrap
+                            >Monitores</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="./revisao.html" nowrap
+                            >Coordenação de Revisão e Linguagem</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="./diagramacao.html"
+                            nowrap
+                            >Arte gráfica, Design, Ilustração</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="./site.html" nowrap
+                            >Website</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="./acoes.html"
+                        >Nossas Ações</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="parent nav-item">
+                  <a class="nav-link" href="javascript:" id="navbarDropdown"
+                    ><b class="BotaoNavMain">Desafios</b></a
+                  >
+                  <ul id="menu-two-columns" class="child">
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 0);"
+                        href="./desafio.html"
+                        >Aposte na Soma</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 1);"
+                        href="./desafio.html"
+                        >Construindo Pipas</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 2);"
+                        href="./desafio.html"
+                        >Desafio da Escada</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 3);"
+                        href="./desafio.html"
+                        >Desafio da Ilha</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 4);"
+                        href="./desafio.html"
+                        >Desafio da Pá Suja</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 5);"
+                        href="./desafio.html"
+                        >Desafio das Bandeiras</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 6);"
+                        href="./desafio.html"
+                        >Desafio das Varetas</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 7);"
+                        href="./desafio.html"
+                        >Desafio do Dragão</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 8);"
+                        href="./desafio.html"
+                        >Flores no Jardim</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 9);"
+                        href="./desafio.html"
+                        >Gincana das Alturas</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 10);"
+                        href="./desafio.html"
+                        >Milu e Nala</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 11);"
+                        href="./desafio.html"
+                        >Monstros na Roda</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 12);"
+                        href="./desafio.html"
+                        >Organizando o Curral</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 13);"
+                        href="./desafio.html"
+                        >Palitos Coloridos</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 14);"
+                        href="./desafio.html"
+                        >Quantos Retângulos?</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 15);"
+                        href="./desafio.html"
+                        >Sequência de Triângulos</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 16);"
+                        href="./desafio.html"
+                        >Torre da Matilda</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 17);"
+                        href="./desafio.html"
+                        >Triângulos Amigos</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 18);"
+                        href="./desafio.html"
+                        >Triângulos no Pentágono</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 19);"
+                        href="./desafio.html"
+                        >Triângulos Numéricos</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onclick=""
+                        href="./desafio.html"
+                        style="color: #ec4326"
+                        >Banco de Problemas</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="parent nav-item">
+                  <a class="nav-link" href="javascript:"
+                    ><b class="BotaoNavMain">Educadores</b></a
+                  >
+                  <ul class="child">
+                    <li>
+                      <a class="dropdown-item" href="./implementacao.html"
+                        >Implementação</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="./anexos.html"
+                        >Implementação (anexos)</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="./explicacoes.html"
+                        >Explicações iniciais para as análises</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="parent nav-item">
+                  <a class="nav-link" href="javascript:"
+                    ><b class="BotaoNavMain">Mídia</b></a
+                  >
+                  <ul class="child">
+                    <li>
+                      <a class="dropdown-item" href="./videos.html">Vídeos</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="./fotos.html">Fotos</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="parent nav-item">
+                  <a class="nav-link" href="./contato.html"
+                    ><b class="BotaoNavMain">Contato</b></a
+                  >
+                </li>
+                <li class="parent nav-item">
+                  <a class="nav-link" href="./links.html"
+                    ><b class="BotaoNavMain">Links</b></a
+                  >
+                </li>
+                <li class="parent nav-item dropdown">
+                  <a class="nav-link" href="javascript:" id="navbarDropdown">
+                    <img
+                      class="Lupa"
+                      src="/assets//img/Lupa.png"
+                      alt="Buscar"
+                    />
+                  </a>
+                  <ul class="child">
+                    <li>
+                      <form style="display: flex">
+                        <input
+                          type="text"
+                          id="busca"
+                          placeholder="Buscar Desafio"
+                        />
+                        <button
+                          class="btn"
+                          onclick="window.localStorage.setItem('busca',document.getElementById('busca').value);"
+                        >
+                          <a href="busca.html">Buscar</a>
+                        </button>
+                      </form>
+                    </li>
+                  </ul>
+                </li>
+                <!-- Organiza espaçamento menu -->
+                <li>
+                  <a><b style="color: white">Links</b></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- Pagina -->
+        <section class="container">
+          <hr class="linha" />
+          <h1 class="TituloPagina">Monstros na Roda</h1>
+          <hr class="linha" />
+        </section>
+      </main>
+      <br />
+      <div class="container">
+        <div style="margin-right: -0.75rem; margin-left: -0.75rem">
+          <!-- GAME CONTAINER -->
+          <div class="game__container">
+            <div class="circles__container">
+              <div class="big__circle"></div>
+              <div class="circle drop__area"></div>
+              <div class="circle drop__area"></div>
+              <div class="circle drop__area"></div>
+              <div class="circle drop__area"></div>
+              <div class="circle drop__area"></div>
+              <div class="circle drop__area"></div>
+              <div class="circle drop__area"></div>
+              <div class="circle drop__area"></div>
+              <div class="circle drop__area"></div>
+              <div class="circle drop__area"></div>
+            </div>
+
+            <div class="monsters__container">
+              <div id="m1__container" class="drop__area">
+                <img
+                  class="element m_1 draggable-by-jquery-ui"
+                  src="/assets//img/Desafios-img/monstro-1.png"
+                  alt="imagem do monstro de uma perna"
+                />
+                <img
+                  class="element m_1 draggable-by-jquery-ui"
+                  src="/assets//img/Desafios-img/monstro-1.png"
+                  alt="imagem do monstro de uma perna"
+                />
+                <img
+                  class="element m_1 draggable-by-jquery-ui"
+                  src="/assets//img/Desafios-img/monstro-1.png"
+                  alt="imagem do monstro de uma perna"
+                />
+                <img
+                  class="element m_1 draggable-by-jquery-ui"
+                  src="/assets//img/Desafios-img/monstro-1.png"
+                  alt="imagem do monstro de uma perna"
+                />
+              </div>
+
+              <div id="m2__container" class="drop__area">
+                <img
+                  class="element m_2 draggable-by-jquery-ui"
+                  src="/assets//img/Desafios-img/monstro-2.png"
+                  alt="imagem do monstro de uma perna"
+                />
+                <img
+                  class="element m_2 draggable-by-jquery-ui"
+                  src="/assets//img/Desafios-img/monstro-2.png"
+                  alt="imagem do monstro de uma perna"
+                />
+                <img
+                  class="element m_2 draggable-by-jquery-ui"
+                  src="/assets//img/Desafios-img/monstro-2.png"
+                  alt="imagem do monstro de uma perna"
+                />
+              </div>
+
+              <div id="m3__container" class="drop__area">
+                <img
+                  class="element m_3 draggable-by-jquery-ui"
+                  src="/assets//img/Desafios-img/monstro-3.png"
+                  alt="imagem do monstro de uma perna"
+                />
+                <img
+                  class="element m_3 draggable-by-jquery-ui"
+                  src="/assets//img/Desafios-img/monstro-3.png"
+                  alt="imagem do monstro de uma perna"
+                />
+                <img
+                  class="element m_3 draggable-by-jquery-ui"
+                  src="/assets//img/Desafios-img/monstro-3.png"
+                  alt="imagem do monstro de uma perna"
+                />
+              </div>
+              <button
+                class="correct__btn"
+                style="display: none; margin-top: 30px"
+              >
+                Você descobriu! Parabéns!
+              </button>
+              <button
+                class="wrong__btn"
+                style="display: none; margin-top: 30px"
+              >
+                Tente de novo!
+              </button>
+            </div>
+
+            <div id="success__card">
+              <h3>Parabéns!<br />Você descobriu!</h3>
+
+              <div id="success__card__text">
+                <div>
+                  <button>Compartilhe</button>
+                  <h4>sua solução com os monitores</h4>
+                </div>
+
+                <div>
+                  <h4>Veja mensagens no</h4>
+                  <button onclick="redirect('chat-11')">Chat</button>
+                  <h4>sobre esse desafio</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end of GAME CONTAINER -->
+
+          <!-- challenge RULES -->
+          <div id="myModal" class="modal">
+            <span id="fechar" class="close">&times;</span>
+            <img class="modal-content" id="img01" />
+            <div id="caption"></div>
+          </div>
+
+          <div class="desafio__btn__container">
+            <button
+              class="btn btn-primary desafio__btn__primary"
+              onclick="location.reload();"
+            >
+              <a id="replay__btn"> Reiniciar </a>
+            </button>
+
+            <button
+              class="btn btn-primary desafio__btn__primary"
+              onclick="location.assign('./desafio.html');"
+              onclick="window.localStorage.setItem('aleatorio','false'); window.localStorage.setItem('indice', 11);"
+            >
+              <a> Voltar </a>
+            </button>
+
+            <button
+              id="show__rules__btn"
+              class="btn btn-primary desafio__btn__primary"
+            >
+              <a>Regras do Desafio</a>
+            </button>
+          </div>
+        </div>
+
+        <footer class="footer py-2">
+          <div class="container">
+            <div class="row mt-3">
+              <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                <a target="_blank" href="https://ufmg.br/">
+                  <img
+                    class="logo img-thumbnail"
+                    src="/assets//img/Logos/ufmg.png"
+                  />
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                <a target="_blank" href="https://www.cp.ufmg.br/">
+                  <img
+                    class="logo img-thumbnail"
+                    src="/assets//img/Logos/cp.svg"
+                  />
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                <a target="_blank" href="https://www.icex.ufmg.br/">
+                  <img
+                    class="logo img-thumbnail"
+                    src="/assets//img/Logos/icex.svg"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-12">Copyright © Descobridores 2021</div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="../js/popUp.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../js/gamesLogic.js"></script>
+
+    <script>
+      const positionAndSize = () => {
+        const bigCircle = document.querySelector(".big__circle");
+        const bigCircleSize = bigCircle.offsetWidth; // width = height
+        const radius = bigCircleSize / 2;
+
+        // Get big circle's position relative to the page
+        const bigCircleX = bigCircle.offsetLeft;
+        const bigCircleY = bigCircle.offsetTop;
+
+        // Get all small circles
+        const circles = document.querySelectorAll(".circle");
+        const totalCircles = circles.length;
+
+        const smallCircleSize = bigCircleSize * 0.24; // Each small circle is 20% of the big circle's size
+
+        circles.forEach((circle, index) => {
+          const angle = (index / totalCircles) * 2 * Math.PI;
+
+          // Adjust x and y to be ON the circumference
+          const x =
+            bigCircleX +
+            radius +
+            radius * Math.cos(angle) -
+            smallCircleSize / 2;
+          const y =
+            bigCircleY +
+            radius +
+            radius * Math.sin(angle) -
+            smallCircleSize / 2;
+
+          circle.style.left = `${x}px`;
+          circle.style.top = `${y}px`;
+          circle.style.width = `${smallCircleSize}px`;
+          circle.style.height = `${smallCircleSize}px`;
+        });
+      };
+
+      // Run function on load and resize
+      window.addEventListener("load", positionAndSize);
+      window.addEventListener("resize", positionAndSize);
+    </script>
+
+    <script>
+      // MODEL with the rules of the challenge (its an image that pops up, basically)
+      showRulesModel(11); // receives challenge index as param
+
+      /* GAME LOGIC */
+      const containers = document.querySelectorAll(".circle");
+      const m1Container = document.getElementById("m1__container");
+      const m2Container = document.getElementById("m2__container");
+      const m3Container = document.getElementById("m3__container");
+
+      // check if two strings are the same
+      const checkStrings = (answer, solution) => {
+        if (answer[0] == "3" && answer[9] == "3") {
+          if (answer == "3131121223" || answer == "3221211313") return true;
+        } else {
+          // find "33"
+          let index = -1;
+          for (let i = 0; i < 9; i++) {
+            if (answer[i] == "3" && answer[i + 1] == "3") {
+              index = i;
+              break;
+            }
+          }
+          if (index == -1) return false;
+          j = 0;
+          for (let i = index; i < 9; i++) {
+            if (answer[i] != solution[j]) return false;
+            j += 1;
+          }
+          j += 1;
+
+          for (let i = 0; j < 9; j++) {
+            if (answer[i] != solution[j]) return false;
+            i += 1;
+          }
+        }
+        return true;
+      };
+
+      const checkSolution = () => {
+        let answer = "";
+
+        let numLegs = 3;
+
+        // loop trough the spaces to get the user's answer
+        containers.forEach((el) => {
+          // parseInt((el.firstElementChild.classList.contains("m_1") .split("_")[1])
+          // ))
+          if (el.firstElementChild.classList.contains("m_1")) numLegs = "1";
+          else if (el.firstElementChild.classList.contains("m_2"))
+            numLegs = "2";
+          else numLegs = "3";
+
+          answer += numLegs;
+        });
+
+        console.log(answer);
+
+        if (
+          checkStrings(answer, "3322121131") ||
+          checkStrings(answer, "3313112122")
+        )
+          return true;
+
+        return false;
+      };
+
+      const checkEndGame = () => {
+        // check if all elements have been placed
+        let endGame = true;
+        containers.forEach((el) => {
+          if (el.childNodes.length == 0) endGame = false;
+        });
+
+        if (endGame) {
+          // show result
+          let result = checkSolution();
+
+          // correct answer
+          if (result) {
+            console.log("here");
+            // change border color
+            containers.forEach((el) => {
+              el.style.borderColor = "#00e400";
+            });
+            document.querySelector(".big__circle").style.borderColor =
+              "#00e400";
+
+            // show conffeti effect and success card
+            showSucessCard([".monsters__container", ".circles__container"]);
+
+            // fix answer - dont allow changes anymore
+            document.querySelectorAll(".element").forEach((el) => {
+              el.classList.remove("draggable-by-jquery-ui");
+              el.classList.remove("ui-draggable");
+              el.classList.remove("ui-draggable-handle");
+              el.style.position = "static";
+            });
+
+            // add correct button
+            const correctBtn = document.querySelector(".correct__btn");
+            correctBtn.style.display = "block";
+            correctBtn.addEventListener("click", () => location.reload());
+          }
+          // wrong answer
+          else {
+            // change border color
+            containers.forEach((el) => {
+              el.style.borderColor = "#cc1a1a";
+            });
+            document.querySelector(".big__circle").style.borderColor =
+              "#cc1a1a";
+
+            // add wrong button
+            const correctBtn = document.querySelector(".wrong__btn");
+            correctBtn.style.display = "block";
+            correctBtn.addEventListener("click", () => location.reload());
+          }
+        }
+      };
+
+      // make drag cursor icon
+      $(function () {
+        $(".draggable-by-jquery-ui").draggable({
+          revert: "invalid",
+        });
+        $(".drop__area").droppable({
+          accept: ".draggable-by-jquery-ui",
+
+          // called when element is dropped
+          drop: function (event, element) {
+            // check if drop area already has an element
+            if (this.childNodes.length == 1) {
+              // remove current element from area
+              if (this.firstChild.classList.contains("m_1"))
+                m1Container.appendChild(this.firstChild);
+              else if (this.firstChild.classList.contains("m_2"))
+                m2Container.appendChild(this.firstChild);
+              else m3Container.appendChild(this.firstChild);
+            }
+
+            // adds new element to area
+            this.appendChild(element.draggable[0]);
+            element.draggable[0].style.left = "0";
+            element.draggable[0].style.top = "0";
+            element.draggable[0].style.bottom = "0";
+            element.draggable[0].style.right = "0";
+
+            checkEndGame();
+          },
+        });
+      });
+    </script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
+    <!-- <script src="../js/database.js"></script> -->
+    <!-- <script src="../js/headerInfo.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Viver é aprender" />
+    <meta name="author" content="WebDevelopers" />
+    <title>Os Descobridores da Matemática</title>
+    <link rel="icon" type="image/x-icon" href="/assets/img/Logos/Logo.jpg" />
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v5.13.0../js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link href="/css/little_styles.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allura&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body id="page-top">
+    <div
+      id="PopUp"
+      class="modal"
+      tabindex="-1"
+      role="dialog"
+      style="display: none"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              Bem Vindo aos Descobridores da Matemática
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Fechar"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p style="color: black">
+              Olá! Seja bem-vindo ao site
+              <b>DESCOBRIDORES DA MATEMÁTICA</b>.<br />
+              Aqui você encontrará divertidos desafios e problemas.<br />
+              Vamos lá?
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+              onclick="document.getElementById('PopUp').remove()"
+            >
+              Vamos lá
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <main>
+        <!-- Masthead-->
+        <div style="background-color: #1b2038" class="hall text-light pt-0">
+          <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-6">
+              <!-- IMAGEM DA LOGO -->
+              <img
+                id="logo"
+                class="img-fluid"
+                src="/assets//img/Logos/descobridores.svg"
+                style="
+                  max-height: 300px;
+                  max-width: 300px;
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  margin: auto;
+                "
+              />
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 my-auto">
+              <h1 class="text-uppercase TitleText">
+                <a href="./index.html" class="LinkTitulo">
+                  <div>Descobridores&nbsp</div>
+                  <div>Da Matemática</div>
+                </a>
+              </h1>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12">
+              <img
+                id=""
+                class="float-right img-flex"
+                src="/assets//img/capa.jpg"
+                style="height: 300px; width: 500px"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Navigation-->
+        
+        <!-- Pagina -->
+        <section class="container">
+          <hr class="linha" />
+          <h1 class="TituloPagina">Registro</h1>
+
+          <div class="login__container">
+            <div>
+              <label>Usuário</label>
+              <br />
+              <input id="user" type="text" />
+            </div>
+             <div>
+              <label>Nome</label>
+              <br />
+              <input id="confirm-password" type="name"/>
+            </div>
+             <div>
+              <label>Idade</label>
+              <br />
+              <input id="confirm-password" type="number"/>
+            </div>
+            <div>
+              <label>Senha</label>
+              <br />
+              <input id="confirm-password" type="password" />
+            </div>
+             <div>
+               <label>Confirme a Senha</label>
+               <br/>
+               <input id="password" type="password" />
+            </div>
+
+            <button id="login__btn">Registrar</button>
+
+            <a for="register">Ja possui cadastro? Login aqui</a>
+          </div>
+        </section>
+      </main>
+      <footer class="footer py-2">
+        <div class="container">
+          <div class="row mt-3">
+            <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+              <a target="_blank" href="https://ufmg.br/">
+                <img
+                  class="logo img-thumbnail"
+                  src="/assets/img/Logos/ufmg.png"
+                />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+              <a target="_blank" href="https://www.cp.ufmg.br/">
+                <img class="logo img-thumbnail" src="/assets/img/Logos/cp.svg" />
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+              <a target="_blank" href="https://www.icex.ufmg.br/">
+                <img
+                  class="logo img-thumbnail"
+                  src="/assets/img/Logos/icex.svg"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12">Copyright © Descobridores 2021</div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

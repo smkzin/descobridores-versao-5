@@ -135,14 +135,14 @@ editGamesBtn.addEventListener("click", () => {
           <input class="edit__game__input" placeholder='${name}' />
           
           <div class="edit__icons__div">
-            <img class="edit__icon" src="./assets/img/edit-icon.png" />
-            <img class="trash__icon" src="./assets/img/trash-icon.png" />
+            <img class="edit__icon" src="/assets//img/edit-icon.png" />
+            <img class="trash__icon" src="/assets//img/trash-icon.png" />
             
           </div>
 
           <div class="submit__icons__div">
-            <img class="submit__edit__game" src="./assets/img/correct-icon.png" />
-            <img class="cancel__edit__game" src="./assets/img/wrong-icon.png" />
+            <img class="submit__edit__game" src="/assets//img/correct-icon.png" />
+            <img class="cancel__edit__game" src="/assets//img/wrong-icon.png" />
           </div>
         </div>`;
     }
@@ -156,14 +156,14 @@ editGamesBtn.addEventListener("click", () => {
         <input class="edit__game__input" placeholder='${name}' />
           
           <div class="edit__icons__div">
-            <img class="edit__icon" src="./assets/img/edit-icon.png" />
-            <img class="trash__icon" src="./assets/img/trash-icon.png" />
+            <img class="edit__icon" src="/assets//img/edit-icon.png" />
+            <img class="trash__icon" src="/assets//img/trash-icon.png" />
             
           </div>
 
           <div class="submit__icons__div">
-            <img class="submit__edit__game" src="./assets/img/correct-icon.png" />
-            <img class="cancel__edit__game" src="./assets/img/wrong-icon.png" />
+            <img class="submit__edit__game" src="/assets//img/correct-icon.png" />
+            <img class="cancel__edit__game" src="/assets//img/wrong-icon.png" />
           </div>
         </div>`;
     }

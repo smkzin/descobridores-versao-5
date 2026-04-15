@@ -10621,7 +10621,7 @@ header.masthead {
   padding-bottom: 3rem;
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/Capa.jpg");
+  background-image: url("./assets//img/Capa.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   position: relative;
@@ -10944,7 +10944,7 @@ header.masthead .masthead-heading {
 
 section#contact {
   background-color: #898c7b;
-  background-image: url("../assets/img/bg-contacts.png");
+  background-image: url("./assets//img/bg-contacts.png");
   background-repeat: no-repeat;
   background-position: center;
 }

@@ -147,7 +147,7 @@ const resetGame = () => {
         <img
           class="fixed__item porco"
           draggable="false"
-          src="./assets/img/porco.png"
+          src="/assets//img/porco.png"
         />
       </div>
 
@@ -159,7 +159,7 @@ const resetGame = () => {
         <img
           class="fixed__item cavalo"
           draggable="false"
-          src="./assets/img/cavalo.png"
+          src="/assets//img/cavalo.png"
         />
       </div>
       <div class="item__container row3 col2"></div>
@@ -171,13 +171,13 @@ const resetGame = () => {
         <img
           class="curral__item porco"
           draggable="true"
-          src="./assets/img/porco.png"
+          src="/assets//img/porco.png"
         />
 
         <img
           class="curral__item porco"
           draggable="true"
-          src="./assets/img/porco.png"
+          src="/assets//img/porco.png"
         />
       </div>
 
@@ -185,13 +185,13 @@ const resetGame = () => {
         <img
           class="curral__item cavalo"
           draggable="true"
-          src="./assets/img/cavalo.png"
+          src="/assets//img/cavalo.png"
         />
 
         <img
           class="curral__item cavalo"
           draggable="true"
-          src="./assets/img/cavalo.png"
+          src="/assets//img/cavalo.png"
         />
       </div>
 
@@ -199,19 +199,19 @@ const resetGame = () => {
         <img
           class="curral__item boi"
           draggable="true"
-          src="./assets/img/boi.png"
+          src="/assets//img/boi.png"
         />
 
         <img
           class="curral__item boi"
           draggable="true"
-          src="./assets/img/boi.png"
+          src="/assets//img/boi.png"
         />
 
         <img
           class="curral__item boi"
           draggable="true"
-          src="./assets/img/boi.png"
+          src="/assets//img/boi.png"
         />
 
         <button id="tentar" class="" style="display: none"></button>
